@@ -1,0 +1,41 @@
+/*.about-section {*/
+/*    padding: 2rem;*/
+/*    background-color: #f9f9f9;*/
+/*    font-family: Arial, sans-serif;*/
+/*    color: #333;*/
+/*    line-height: 1.6;*/
+/*}*/
+
+/*.about-container {*/
+/*    max-width: 800px;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+/*.about-container h1,*/
+/*.about-container h2 {*/
+/*    color: #007bff; !* Accent color for headings *!*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+/*.about-container p {*/
+/*    margin-bottom: 1.5rem;*/
+/*    text-align: justify;*/
+/*}*/
+
+/*.about-skally {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    gap: 1rem;*/
+/*    margin-bottom: 2rem;*/
+/*}*/
+
+/*.about-image {*/
+/*    width: 150px;*/
+/*    height: auto;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*strong {*/
+/*    color: #007bff; !* Highlighted names and key terms *!*/
+/*}*/

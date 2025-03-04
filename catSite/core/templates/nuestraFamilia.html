@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Nuestra Familia" %}{% endblock %}
+
+{% block content %}
+    <section class="family-history">
+        <div class="family-history-container">
+            <h1>{% trans "Todo empezó hace más de 20 años" %}</h1>
+            <p>
+                {% trans "Una preciosidad de ojos maravillosos llegó a nuestra casa:" %}
+                <strong>SKALLY</strong>.
+            </p>
+            <div class="family-history-content">
+                <p>
+                    {% trans "Una persa Silver Shade que nos inoculó el amor por los gatos que nos hizo caer enamorados de por vida de nuestros amigos felinos. A su triste partida quedó un boquete en nuestros corazones, no pudimos vivir mucho más tiempo sin un felino en nuestro hogar y es así como de las gélidas tierras rusas llegó el cándido y amoroso" %}
+                    <strong>Merlín</strong>,
+                    {% trans "el gato que encendió la mecha que hizo detonar nuestra llama por la pasión que nos llevó a empezar junto con" %}
+                    <strong>Rita</strong> {% trans "y" %} <strong>Greta</strong>,
+                    {% trans "sus fieles compañeras, nuestras andadas por el apasionante mundo felino." %}
+                </p>
+            </div>
+            <p>
+                {% trans "Hace ya más de 14 años nuestra casa empezó a ser el hogar de la dedicación y esmero absoluto con el objetivo claro y conciso de amar y poder brindar ese amor a las familias que nos escogieron para tener en sus corazones a los que para nosotros son más que simples animales. Son animales llenos de amor, consecuencia de haber sido criados con dedicación, absoluta pasión y sin duda devoción." %}
+            </p>
+            <p>
+                {% trans "Después de haber experimentado la maravillosa experiencia de compartir la vida con auténticos peluches amorosos, intentamos con modestia y lo mejor que podemos, con todo el amor, contribuir a que familias, como la nuestra, puedan disfrutar de la fuente de felicidad que estos redondos pequeños representan para nosotros." %}
+            </p>
+            <h2>{% trans "Nuestra filosofía: La Cría Responsable" %}</h2>
+            <p>
+                {% trans "Nuestra gatería es, a la par que familiar, un hogar donde todos convivimos, siguiendo la filosofía de" %}
+                <strong>{% trans "La Cría Responsable" %}</strong>.
+                {% trans "Nuestro objetivo es tener gatos sanos con un carácter maravilloso, que siguiendo los estándares de esta raza maravillosa, sean gatos tranquilos, juguetones y cariñosos que den pie a crear un vínculo absolutamente mágico y especial en niños y adultos por igual." %}
+            </p>
+            <h2>{% trans "Inscripción y autorizaciones" %}</h2>
+            <p>
+                {% trans "Nuestro criadero está inscrito en la" %}
+                <strong>WCF</strong>
+                {% trans "con el número de afijo:" %}
+                <strong>218-CAT</strong>,
+                {% trans "pertenecemos a la" %}
+                <strong>{% trans "Asociación Felina de Catalunya" %}</strong>
+                {% trans "y contamos con la autorización de la Generalitat con el Núcleo zoológico:" %}
+                <strong>B2023007</strong>.
+            </p>
+        </div>
+    </section>
+{% endblock %}

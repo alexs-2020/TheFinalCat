@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Gatos Disponibles" %}{% endblock %}
+
+{% block content %}
+<section class="cats-section">
+  <div class="cats-container">
+    <h2 class="section-title">{% trans "Nuestros Gatos Disponibles" %}</h2>
+    <div class="cats-grid">
+
+      {% for cat in cats %}
+        <form method="GET">
+            <div class="cat-card">
+              <button type="submit" name="selected_cat" value="{{ cat.id }}" class="cat-card-button">
+                <!-- Cat Image -->
+                <div class="cat-image">
+                  <img
+                    src="{{ cat.image.url|default:'/static/images/placeholder.svg' }}"
+                    alt="{% if LANGUAGE_CODE == 'en' %}{{ cat.name_en }}{% else %}{{ cat.name_es }}{% endif %}"
+                  />
+                </div>
+                <!-- Cat Details -->
+                <div class="cat-details">
+                  <h3 class="cat-name">
+                    {% if LANGUAGE_CODE == "en" %}
+                      {{ cat.name_en }}
+                    {% else %}
+                      {{ cat.name_es }}
+                    {% endif %}
+                  </h3>
+                  <p class="cat-info">
+                    {{ cat.age }} {% trans "años" %} •
+                    {% if LANGUAGE_CODE == "en" %}
+                      {{ cat.sexo_en }} • {{ cat.breed_en }}
+                    {% else %}
+                      {{ cat.sexo_es }} • {{ cat.breed_es }}
+                    {% endif %}
+                  </p>
+                  <p class="cat-description">
+                    {% if LANGUAGE_CODE == "en" %}
+                      {{ cat.description_en }}
+                    {% else %}
+                      {{ cat.description_es }}
+                    {% endif %}
+                  </p>
+                </div>
+              </button>
+            </div>
+        </form>
+      {% endfor %}
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  {% if selected_cat %}
+    <div class="modal">
+      <div class="modal-content">
+        <h3 class="modal-title">
+          {% if LANGUAGE_CODE == "en" %}
+            {{ selected_cat.name_en }}
+          {% else %}
+            {{ selected_cat.name_es }}
+          {% endif %}
+        </h3>
+        <p class="modal-info">
+          {{ selected_cat.age }} {% trans "años" %} •
+          {% if LANGUAGE_CODE == "en" %}
+            {{ selected_cat.sexo_en }} • {{ selected_cat.breed_en }}
+          {% else %}
+            {{ selected_cat.sexo_es }} • {{ selected_cat.breed_es }}
+          {% endif %}
+        </p>
+        <div class="modal-image-container">
+          <img src="{{ selected_cat.image.url|default:'/static/images/placeholder.svg' }}"
+               alt="{% if LANGUAGE_CODE == 'en' %}{{ selected_cat.name_en }}{% else %}{{ selected_cat.name_es }}{% endif %}">
+        </div>
+        <p class="modal-description">
+          {% if LANGUAGE_CODE == "en" %}
+            {{ selected_cat.description_en }}
+          {% else %}
+            {{ selected_cat.description_es }}
+          {% endif %}
+        </p>
+        <div>
+          <h4>{% trans "Rasgos de Personalidad" %}:</h4>
+          <p>
+            {% if LANGUAGE_CODE == "en" %}
+              {{ selected_cat.personality_traits_en }}
+            {% else %}
+              {{ selected_cat.personality_traits_es }}
+            {% endif %}
+          </p>
+        </div>
+        <div>
+          <h4>{% trans "Información de Salud" %}:</h4>
+          <p>{{ selected_cat.health_info }}</p>
+        </div>
+
+        <div class="modal-adoption">
+            <p>{% trans "¿Interesado en adoptar? Contáctanos a través de:" %}</p>
+            <p>
+              📧 <a href="mailto:Merlinblue-cattery@hotmail.com" class="modal-contact-link">Merlinblue-cattery@hotmail.com</a>
+            </p>
+            <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/34667866660" target="_blank" class="modal-contact-link"> WhatsApp: +34 667 86 66 60</a></p>
+        </div>
+
+        <a href="{{ request.path }}" class="modal-close">{% trans "Cerrar" %}</a>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#{% extends 'base.html' %}#}
+{#{% load i18n %}#}
+{#{% load static %}#}
+{##}
+{#{% block title %}{% trans "Gatos Disponibles" %}{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#<section class="cats-section">#}
+{#  <div class="cats-container">#}
+{#    <h2 class="section-title">{% trans "Nuestros Gatos Disponibles" %}</h2>#}
+{#    <div class="cats-grid">#}
+{##}
+{#      {% for cat in cats %}#}
+{#        <form method="GET">#}
+{#            <div class="cat-card">#}
+{#              <button type="submit" name="selected_cat" value="{{ cat.id }}" class="cat-card-button">#}
+{#                <!-- Cat Image -->#}
+{#                <div class="cat-image">#}
+{#                  <img#}
+{#                    src="{{ cat.image.url|default:'/static/images/placeholder.svg' }}"#}
+{#                    alt="{{ cat.name }}"#}
+{#                  />#}
+{#                </div>#}
+{#                <!-- Cat Details -->#}
+{#                <div class="cat-details">#}
+{#                  <h3 class="cat-name">{{ cat.name }}</h3>#}
+{#                  <p class="cat-info">{{ cat.age }} {% trans "años" %} • {{ cat.sexo }} • {{ cat.breed }}</p>#}
+{#                  <p class="cat-description">{{ cat.description }}</p>#}
+{#                </div>#}
+{#              </button>#}
+{#            </div>#}
+{#        </form>#}
+{#      {% endfor %}#}
+{##}
+{#    </div>#}
+{#  </div>#}
+{##}
+{#  <!-- Modal -->#}
+{#  {% if selected_cat %}#}
+{#    <div class="modal">#}
+{#      <div class="modal-content">#}
+{#        <h3 class="modal-title">{{ selected_cat.name }}</h3>#}
+{#        <p class="modal-info">{{ selected_cat.age }} {% trans "años" %} • {{ selected_cat.sexo }} • {{ selected_cat.breed }}</p>#}
+{#        <div class="modal-image-container">#}
+{#          <img src="{{ selected_cat.image.url|default:'/static/images/placeholder.svg' }}" alt="{{ selected_cat.name }}">#}
+{#        </div>#}
+{#        <p class="modal-description">{{ selected_cat.description }}</p>#}
+{#        <div>#}
+{#          <h4>{% trans "Rasgos de Personalidad" %}:</h4>#}
+{#              <p> {{ selected_cat.personality_traits }}</p>#}
+{#        </div>#}
+{#        <div>#}
+{#          <h4>{% trans "Información de Salud" %}:</h4>#}
+{#          <p>{{ selected_cat.health_info }}</p>#}
+{#        </div>#}
+{##}
+{#        <div class="modal-adoption">#}
+{#            <p>{% trans "¿Interesado en adoptar? Contáctanos a través de:" %}</p>#}
+{#            <p>#}
+{#              📧 <a href="mailto:Merlinblue-cattery@hotmail.com" class="modal-contact-link">Merlinblue-cattery@hotmail.com</a>#}
+{#            </p>#}
+{#            <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/34667866660" target="_blank" class="modal-contact-link"> WhatsApp: +34 667 86 66 60</a></p>#}
+{#        </div>#}
+{##}
+{#        <a href="{{ request.path }}" class="modal-close">{% trans "Cerrar" %}</a>#}
+{#      </div>#}
+{#    </div>#}
+{#  {% endif %}#}
+{#</section>#}
+{##}
+{#{% endblock %}#}

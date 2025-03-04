@@ -1,0 +1,164 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% trans "BRITISH MERLINBLUE" %} {% endblock %}</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    {% csrf_token %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("{% url 'set_language' %}", { method: "GET", credentials: "include" })
+            .then(response => console.log("CSRF token should now be set."));
+        });
+    </script>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <!-- Logo Section -->
+                <div class="logo-section">
+                    <img src="/media/merlinBlueLogo.png" alt="Cat Logo" class="logo"/>
+                    <span class="brand-name">{% trans "GATERIA FAMILIAR DE BRITISH SHORT HAIR & LONGHAIR" %}</span>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+                <!-- Navbar Links -->
+                <div class="nav-links">
+                    <a href="{% url 'home' %}" class="nav-link">{% trans "Nuestra Familia" %}</a>
+                    <a href="{% url 'machos' %}" class="nav-link">{% trans "MACHOS" %}</a>
+                    <a href="{% url 'hembras' %}" class="nav-link">{% trans "HEMBRAS" %}</a>
+                    <a href="{% url 'catList' %}" class="nav-link">{% trans "GATITOS" %}</a>
+                    <a href="{% url 'catList' %}" class="nav-link">{% trans "PLANES" %}</a>
+                    <a href="{% url 'catList' %}" class="nav-link">{% trans "CONDICIONES" %}</a>
+                    <a href="?contact=1" class="nav-link" style="text-decoration: none;">{% trans "CONTACT" %}</a>
+
+                    {% if request.GET.contact %}
+                        <div class="modal">
+                            <div class="modal-content">
+                                <h3 class="modal-title">{% trans "Contact Us" %}</h3>
+                                <p>{% trans "Interested in adopting? Reach out to us:" %}</p>
+                                <p>📧 <a href="mailto:Merlinblue-cattery@hotmail.com" class="modal-contact-link">Merlinblue-cattery@hotmail.com</a></p>
+                                <p><i class="fa-brands fa-whatsapp"></i>
+                                    <a href="https://wa.me/34667866660" target="_blank" class="modal-contact-link"> WhatsApp: +34 667 86 66 60</a>
+                                </p>
+                                <a href="{{ request.path }}" class="modal-close">{% trans "Close" %}</a>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <!-- Language Dropdown -->
+                    <div class="language-dropdown">
+                        <span id="selected-lang" onclick="toggleDropdown()">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% if LANGUAGE_CODE == "en" %}
+                                ES
+                            {% else %}
+                                EN
+                            {% endif %}
+                        </span>
+                        <div id="language-options" class="language-options">
+                            {% if LANGUAGE_CODE == "en" %}
+                                <span class="lang-option" onclick="changeLanguage(event, 'es')">EN</span>
+                            {% else %}
+                                <span class="lang-option" onclick="changeLanguage(event, 'en')">ES</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="footer-wrapper">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- Logo -->
+            <div class="footer-column">
+                <img src="/media/merlinBlueLogo.png" alt="Logo" class="footer-logo" />
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3 class="footer-heading">{% trans "Enlaces" %}</h3>
+                <ul class="footer-links">
+                    <li><a href="/about" class="footer-link">{% trans "Sobre Nosotros" %}</a></li>
+                    <li><a href="{% url 'catList' %}" class="footer-link">{% trans "Gatos Disponibles" %}</a></li>
+                    <li><a href="{% url 'home' %}" class="footer-link">{% trans "Planes" %}</a></li>
+                    <li><a href="{% url 'home' %}" class="footer-link">{% trans "Consejos" %}</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-column">
+                <h3 class="footer-heading">{% trans "Contactanos Hoy" %}</h3>
+                <ul class="footer-links">
+                    <li>
+                        <p>📧 <a href="mailto:Merlinblue-cattery@hotmail.com" class="modal-contact-link">Merlinblue-cattery@hotmail.com</a></p>
+                    </li>
+                    <li>
+                        <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/34667866660" target="_blank" class="modal-contact-link"> WhatsApp: +34 667 86 66 60</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 {% trans "Copyright 2025. All rights reserved." %}</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function getCSRFToken() {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            document.cookie.split(';').forEach(cookie => {
+                let trimmedCookie = cookie.trim();
+                if (trimmedCookie.startsWith('csrftoken=')) {
+                    cookieValue = trimmedCookie.split('=')[1];
+                }
+            });
+        }
+        return cookieValue;
+    }
+
+    function changeLanguage(event, lang) {
+        event.preventDefault(); // Prevents default page reload
+
+        fetch("{% url 'set_language' %}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "X-CSRFToken": getCSRFToken(),
+            },
+            body: `language=${lang}&next={{ request.path }}`
+        }).then(() => {
+            location.reload(); // Refresh the page to apply new language
+        }).catch(error => console.error("Error changing language:", error));
+    }
+
+    function toggleMenu() {
+        let navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+    }
+
+
+
+</script>
+
+</body>
+</html>

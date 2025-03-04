@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Welcome to Cat Website{% endblock %}
+
+{% block content %}
+{#<section class="home-section">#}
+{#    // let us take care of your cat#}
+{#    // view cats#}
+
+<section class="hero-section">
+{#<link rel="stylesheet" href="{% static 'css/styles.css' %}">#}
+    <div class="hero-content">
+        <p class="review">⭐ 5 Star Ratings (970 Reviews)</p>
+        <h1>Find Your Perfect Feline Companion</h1>
+        <p>Explore our selection of lovable cats waiting for a forever home. Let us help you find the perfect companion!</p>
+        <a href="{% url 'catList' %}" class="hero-button">View Available Cats</a>
+    </div>
+    <div class="hero-image">
+        <img src="media/cats/images.jpeg" alt="Cat Image">
+    </div>
+</section>
+<section class="certifications-section">
+    <div class="certifications-container">
+{#        <img src="{% static 'media/certification1.png' %}" alt="Certification 1" class="cert-image">#}
+{#        <img src="{% static 'media/certification2.jpg' %}" alt="Certification 2" class="cert-image">#}
+{#        <img src="{% static 'media/merlinBlueLogo.png' %}" alt="Certification 3" class="cert-image">#}
+        <img src="media/certification1.png" alt="Certification 1" class="cert-image">
+        <img src="media/certification2.jpg" alt="Certification 2" class="cert-image">
+        <img src="media/merlinBlueLogo.png" alt="Certification 3" class="cert-image">
+
+    </div>
+</section>
+ <section class="about-section">
+      <div class="about-preview">
+    <div class="about-preview-content">
+        <h2>About Us</h2>
+        <p>
+            Discover our journey of over 20 years with our feline friends. From Skally, our first Persian Silver Shade,
+            to our love for responsible cat breeding, we’ve dedicated our lives to providing love and joy to families.
+        </p>
+        <a href="{% url 'about' %}" class="learn-more-button">Learn More</a>
+    </div>
+    <div class="about-preview-image">
+        <img src="{% static 'images/skally_preview.jpg' %}" alt="Preview of About Us">
+    </div>
+</div>
+    </section>
+
+<section class="experience-section">
+    <div class="experience-container">
+        <h2>Nuestra Experiencia</h2>
+        <p>
+            Con más de <strong>14 años de experiencia</strong>, hemos dedicado nuestra vida a criar y cuidar gatos de la raza British con el más alto nivel de dedicación y prestigio. Nuestro trabajo está respaldado por asociaciones reconocidas, veterinarios especializados y una pasión auténtica que nos impulsa a mejorar continuamente.
+        </p>
+        <p>
+            A lo largo de estos años, hemos aprendido a combinar el conocimiento y la pasión para garantizar que cada uno de nuestros gatos no solo cumpla con los estándares de la raza, sino que también se convierta en un compañero cariñoso y equilibrado para su nueva familia. Nuestra prioridad es criar gatos saludables, felices y con un carácter excepcional.
+        </p>
+        <p>
+            Nuestro compromiso con la <strong>Cría Responsable</strong> y el respeto hacia nuestros amigos felinos nos ha llevado a ser reconocidos como un referente en el mundo de los criaderos de gatos British. Cada gato es criado en un ambiente familiar lleno de amor, dedicación y cuidado profesional.
+        </p>
+    </div>
+</section>
+<section class="history-section">
+    <div class="history-preview">
+    <div class="history-preview-content">
+        <h2>Historia de los British Shorthair</h2>
+        <p>
+            Descubre los fascinantes orígenes de la raza British Shorthair, una de las razas felinas más antiguas
+            y populares del mundo. Desde los romanos hasta la actualidad, su historia está llena de hitos que
+            forjaron su carácter único y adorable.
+        </p>
+        <a href="{% url 'history' %}" class="learn-more-button">Leer Más</a>
+    </div>
+    <div class="history-preview-image">
+        <img src="{% static 'images/british_shorthair_preview.jpg' %}" alt="Preview of British Shorthair History">
+    </div>
+</div>
+</section>
+<script>
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        // Normalize the index to loop back around if out of bounds
+        currentSlide = (index + totalSlides) % totalSlides;
+
+        // Calculate the offset for the carousel transform
+        const offset = -currentSlide * 100;
+        document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+    }
+
+    // Auto-rotate every 3 seconds
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 3000);
+</script>
+{% endblock %}
+
+
+

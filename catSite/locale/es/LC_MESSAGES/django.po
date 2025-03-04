@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-21 13:43-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: catList/templates/catList.html:5 core/templates/base.html:87
+msgid "Gatos Disponibles"
+msgstr "Available Cats"
+
+#: catList/templates/catList.html:10
+msgid "Nuestros Gatos Disponibles"
+msgstr "Our Available Cats"
+
+#: catList/templates/catList.html:34 catList/templates/catList.html:69
+msgid "años"
+msgstr "years"
+
+#: catList/templates/catList.html:88
+msgid "Rasgos de Personalidad"
+msgstr "Personality Traits"
+
+#: catList/templates/catList.html:98
+msgid "Información de Salud"
+msgstr "Health Information"
+
+#: catList/templates/catList.html:103
+msgid "¿Interesado en adoptar? Contáctanos a través de:"
+msgstr "Interested in adopting? Contact us through:"
+
+#: catList/templates/catList.html:110
+msgid "Cerrar"
+msgstr "Close"
+
+#: catSite/settings.py:140
+msgid "English"
+msgstr "Inglés"
+
+#: catSite/settings.py:141
+msgid "Spanish"
+msgstr "Español"
+
+#: core/templates/base.html:9
+msgid "BRITISH MERLINBLUE"
+msgstr "BRITISH MERLINBLUE"
+
+#: core/templates/base.html:27
+msgid "GATERIA FAMILIAR DE BRITISH SHORT HAIR & LONGHAIR"
+msgstr "FAMILIAR CATTERY OF BRITISH SHORT HAIR & LONGHAIR"
+
+#: core/templates/base.html:31 core/templates/historia.html:4
+#: core/templates/nuestraFamilia.html:4
+msgid "Nuestra Familia"
+msgstr "Our Family"
+
+#: core/templates/base.html:32
+msgid "MACHOS"
+msgstr "MALES"
+
+#: core/templates/base.html:33
+msgid "HEMBRAS"
+msgstr "FEMALES"
+
+#: core/templates/base.html:34
+msgid "GATITOS"
+msgstr "KITTENS"
+
+#: core/templates/base.html:35
+msgid "PLANES"
+msgstr "PLANS"
+
+#: core/templates/base.html:36
+msgid "CONDICIONES"
+msgstr "CONDITIONS"
+
+#: core/templates/base.html:37
+msgid "CONTACT"
+msgstr "CONTACT"
+
+#: core/templates/base.html:42
+msgid "Contact Us"
+msgstr "Contact Us"
+
+#: core/templates/base.html:43
+msgid "Interested in adopting? Reach out to us:"
+msgstr "Interested in adopting? Contact us:"
+
+#: core/templates/base.html:46
+msgid "Close"
+msgstr "Close"
+
+#: core/templates/base.html:84
+msgid "Enlaces"
+msgstr "Links"
+
+#: core/templates/base.html:86 core/templates/home.html:39
+msgid "Sobre Nosotros"
+msgstr "About Us"
+
+#: core/templates/base.html:88
+msgid "Planes"
+msgstr "Plans"
+
+#: core/templates/base.html:89
+msgid "Consejos"
+msgstr "Tips"
+
+#: core/templates/base.html:95
+msgid "Contactanos Hoy"
+msgstr "Contact Us Today"
+
+#: core/templates/base.html:109
+msgid "Cat Adoption Center. All rights reserved."
+msgstr "Cat Adoption Center. All rights reserved."
+
+#: core/templates/historia.html:9 core/templates/home.html:68
+msgid "Historia de los British Shorthair"
+msgstr "History of the British Shorthair"
+
+#: core/templates/historia.html:11
+msgid ""
+"En este apartado pincelaremos una vista rápida en la que conocerán "
+"brevemente la historia de la raza que representa nuestra familia felina, el "
+"British Shorthair, también conocido como gato británico de pelo corto, es "
+"considerado una de las razas felinas más antiguas y populares de Gran "
+"Bretaña y de las primeras en ser categorizada como tal."
+msgstr ""
+"This section provides a quick overview of the history of the breed that represents our feline family, the British Shorthair, also known as the British short-haired cat. It is considered one of the oldest and most popular cat breeds in Great Britain and one of the first to be officially categorized as a breed."
+
+#: core/templates/historia.html:14
+msgid ""
+"Su historia se remonta a tiempos remotos, y su evolución ha sido fascinante. "
+"Permíteme llevarte a través de los hitos clave en la historia de esta noble "
+"y cándida raza."
+msgstr ""
+"Its history dates back to ancient times, and its evolution has been fascinating. Let me take you through the key milestones in the history of this noble and charming breed."
+
+#: core/templates/historia.html:17
+msgid "Orígenes Romanos"
+msgstr "Roman Origins"
+
+#: core/templates/historia.html:19
+msgid ""
+"Primeramente trataremos de sumergirnos en el pasado de esta raza a partir de "
+"sus orígenes, que se remontan en la época romana. Se cree que las cohortes y "
+"mercaderes romanos llevaron consigo los ancestros directos del British "
+"Shorthair desde Egipto, cruzándolos con los gatos autóctonos de la región, "
+"creando gatos de constitución robusta y pelaje denso."
+msgstr ""
+"First, we will delve into the past of this breed from its origins, which date back to Roman times. It is believed that Roman cohorts and merchants brought the direct ancestors of the British Shorthair from Egypt, crossing them with local cats in the region, creating robustly built cats with dense fur."
+
+#: core/templates/home.html:5
+msgid "Bienvenido a la Página de Gatos"
+msgstr "Welcome to the Cat Website"
+
+#: core/templates/home.html:11
+msgid "Calificación de 5 estrellas (970 Reseñas)"
+msgstr "5 Star Rating (970 Reviews)"
+
+#: core/templates/home.html:12
+msgid "Encuentra tu Compañero Felino Perfecto"
+msgstr "Find Your Perfect Feline Companion"
+
+#: core/templates/home.html:13
+msgid ""
+"Explora nuestra selección de adorables gatos que esperan un hogar para "
+"siempre. ¡Déjanos ayudarte a encontrar el compañero perfecto!"
+msgstr ""
+"Explore our selection of adorable cats waiting for a forever home. Let us help you find the perfect companion!"
+
+#: core/templates/home.html:14
+msgid "Ver Gatos Disponibles"
+msgstr "View Available Cats"
+
+#: core/templates/home.html:18
+msgid "Imagen de Gato"
+msgstr "Cat Image"
+
+#: core/templates/home.html:20
+msgid "Imagen de Marcador de Posición"
+msgstr "Placeholder Image"
+
+#: core/templates/home.html:27
+msgid "Certificación 1"
+msgstr "Certification 1"
+
+#: core/templates/home.html:28
+msgid "Certificación 2"
+msgstr "Certification 2"
+
+#: core/templates/home.html:29
+msgid "Certificación 3"
+msgstr "Certification 3"
+
+#: core/templates/nuestraFamilia.html:9
+msgid "Todo empezó hace más de 20 años"
+msgstr "It all started over 20 years ago"
+
+#: core/templates/nuestraFamilia.html:11
+msgid "Una preciosidad de ojos maravillosos llegó a nuestra casa:"
+msgstr "A beauty with wonderful eyes arrived at our home:"
+
+#: core/templates/nuestraFamilia.html:29
+msgid "Nuestra filosofía: La Cría Responsable"
+msgstr "Our Philosophy: Responsible Breeding"
