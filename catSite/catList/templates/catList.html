@@ -24,7 +24,7 @@
                 <!-- Cat Details -->
                 <div class="cat-details">
                   <h3 class="cat-name">
-                    {% if LANGUAGE_CODE == "en" %}
+                    {% if LANGUAGE_CODE == "es" %}
                       {{ cat.name_en }}
                     {% else %}
                       {{ cat.name_es }}
@@ -33,13 +33,14 @@
                   <p class="cat-info">
                     {{ cat.age }} {% trans "años" %} •
                     {% if LANGUAGE_CODE == "en" %}
-                      {{ cat.sexo_en }} • {{ cat.breed_en }}
-                    {% else %}
                       {{ cat.sexo_es }} • {{ cat.breed_es }}
+                    {% else %}
+        
+                      {{ cat.sexo_en }} • {{ cat.breed_en }}
                     {% endif %}
                   </p>
                   <p class="cat-description">
-                    {% if LANGUAGE_CODE == "en" %}
+                    {% if LANGUAGE_CODE == "es" %}
                       {{ cat.description_en }}
                     {% else %}
                       {{ cat.description_es }}
@@ -59,7 +60,7 @@
     <div class="modal">
       <div class="modal-content">
         <h3 class="modal-title">
-          {% if LANGUAGE_CODE == "en" %}
+          {% if LANGUAGE_CODE == "es" %}
             {{ selected_cat.name_en }}
           {% else %}
             {{ selected_cat.name_es }}
@@ -68,9 +69,9 @@
         <p class="modal-info">
           {{ selected_cat.age }} {% trans "años" %} •
           {% if LANGUAGE_CODE == "en" %}
-            {{ selected_cat.sexo_en }} • {{ selected_cat.breed_en }}
-          {% else %}
             {{ selected_cat.sexo_es }} • {{ selected_cat.breed_es }}
+          {% else %}
+            {{ selected_cat.sexo_en }} • {{ selected_cat.breed_en }}
           {% endif %}
         </p>
         <div class="modal-image-container">
@@ -78,7 +79,7 @@
                alt="{% if LANGUAGE_CODE == 'en' %}{{ selected_cat.name_en }}{% else %}{{ selected_cat.name_es }}{% endif %}">
         </div>
         <p class="modal-description">
-          {% if LANGUAGE_CODE == "en" %}
+          {% if LANGUAGE_CODE == "es" %}
             {{ selected_cat.description_en }}
           {% else %}
             {{ selected_cat.description_es }}
@@ -87,7 +88,7 @@
         <div>
           <h4>{% trans "Rasgos de Personalidad" %}:</h4>
           <p>
-            {% if LANGUAGE_CODE == "en" %}
+            {% if LANGUAGE_CODE == "es" %}
               {{ selected_cat.personality_traits_en }}
             {% else %}
               {{ selected_cat.personality_traits_es }}

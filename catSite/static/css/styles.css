@@ -329,6 +329,7 @@ justify-content: center;    /*padding-inline:  4px;*/
   .cats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+ 
 }
 
 @media (min-width: 1024px) {
@@ -534,6 +535,9 @@ justify-content: center;    /*padding-inline:  4px;*/
 
   .modal-image-container img {
     max-height: 400px; /* Adjusts for medium screens */
+  }
+  .brand-name {
+    font-size:  0.7rem; /* text-xl */
   }
 }
 
@@ -1007,6 +1011,7 @@ strong {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 25rem;
 }
 
 .history-preview-content {
@@ -1026,38 +1031,53 @@ strong {
 }
 
 .history-preview-image {
-    flex: 1;
-    text-align: center;
+    width: 35%; /* Takes full width of its container */
+    height: 200px; /* Takes full height of its container */
+    display: flex; /* Ensures proper alignment */
+    justify-content: center; /* Centers image horizontally */
+    align-items: center; /* Centers image vertically */
+    overflow: hidden; /* Prevents overflow */
 }
 
 .history-preview-image img {
-    max-width: 100%;
-    border-radius: 10px;
+    width: auto; /* Maintain aspect ratio */
+    height: 100%; /* Make sure it fills the div height */
+    object-fit: cover; /* Ensures it fills the container without distortion */
+    display: block; /* Removes unwanted spacing below image */
 }
 
 
 
 @media (max-width: 768px) {
     .hero-section,
-    .about-preview,
-    .history-preview {
+    .about-preview {
         flex-direction: column;
         text-align: center;
     }
-
+    .history-preview {
+      text-align: center;
+      height: auto;
+  }
     .hero-content,
-    .about-preview-content,
-    .history-preview-content {
+    .about-preview-content {
         margin-right: 0;
         padding: 0;
     }
+    .history-preview-content {
+      margin-right: 0;
+      padding: 0;
+      width: 20rem;
+    }
 
     /*.hero-image img,*/
-    .about-preview-image img,
-    .history-preview-image img {
-        width: 100%;
+    .about-preview-image img {
+      width: 100%;
+      height: auto;
+  }
+    /* .history-preview-image img {
+        
         height: auto;
-    }
+    } */
 
     .hero-content h1,
     .about-preview-content h2,
@@ -1383,7 +1403,9 @@ strong {
         padding-inline: 0rem;
     }
     .footer-column {
-width: fit-content;
-}
-
+      width: fit-content;
+  }
+.footer-grid {
+  gap: 0px;
+  } 
 }
