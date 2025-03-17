@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'britishmerlinblue.com',  "https://thefinalcat-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'https://britishmerlinblue.com',  "https://thefinalcat-production.up.railway.app"]
 CSRF_COOKIE_HTTPONLY = False  # ✅ Allows JavaScript to read CSRF cookies
 CSRF_COOKIE_SECURE = False    # ❌ Set to True only if using HTTPS
 CSRF_COOKIE_SAMESITE = 'Lax'  # ✅ Allows CSRF cookies to be sent correctly
