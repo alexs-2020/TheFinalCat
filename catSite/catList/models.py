@@ -12,8 +12,8 @@ class Cat(models.Model):
     ]
 
     # Name
-    name_es = models.CharField(max_length=100, default="joe", verbose_name="Nombre (ES)")
-    name_en = models.CharField(max_length=100, default="joe",verbose_name="Name (EN)", blank=True, null=True)
+    name_es = models.CharField(max_length=100, default="Juan", verbose_name="Nombre (ES)")
+    name_en = models.CharField(max_length=100, default="Joe",verbose_name="Name (EN)", blank=True, null=True)
 
     # Age (No need to translate)
     age = models.PositiveIntegerField(default=0)  # or any sensible default
@@ -23,20 +23,20 @@ class Cat(models.Model):
     sexo_en = models.CharField(max_length=6, choices=SEX_CHOICES_en, default='male', verbose_name="Gender (EN)", )
 
     # Breed
-    breed_es = models.CharField(max_length=100, default="joe", verbose_name="Raza (ES)")
-    breed_en = models.CharField(max_length=100, default="joe", verbose_name="Breed (EN)")
+    breed_es = models.CharField(max_length=100, default="British Shorthair", verbose_name="Raza (ES)")
+    breed_en = models.CharField(max_length=100, default="British Shorthair", verbose_name="Breed (EN)")
 
     # Description
-    description_es = models.TextField(default="joe", verbose_name="Descripción (ES)")
-    description_en = models.TextField(default="joe", verbose_name="Description (EN)")
+    description_es = models.TextField(default="Gato Amable", verbose_name="Descripción (ES)")
+    description_en = models.TextField(default="Friendly Cat", verbose_name="Description (EN)")
 
     # Image
     image = models.ImageField(upload_to='cats/')
     cropping = ImageRatioField('image', '400x500')  # Image cropping
 
     # Personality Traits
-    personality_traits_es = models.CharField(max_length=100, default="joe", verbose_name="Rasgos de personalidad (ES)")
-    personality_traits_en = models.CharField(max_length=100, default="joe", verbose_name="Personality Traits (EN)")
+    personality_traits_es = models.CharField(max_length=100, default="Cariñoso", verbose_name="Rasgos de personalidad (ES)")
+    personality_traits_en = models.CharField(max_length=100, default="Friendly", verbose_name="Personality Traits (EN)")
 
     def get_field(self, field_name, lang):
         """Returns the correct field value based on language."""

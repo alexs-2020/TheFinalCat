@@ -106,33 +106,15 @@ THUMBNAIL_PROCESSORS = (
 
 deployed = True
 
-
-database_url = os.getenv('DATABASE_URL')
-print(f"🚀 DATABASE_URL: {database_url}")  # Print the database URL
-
 if deployed:
-    # DATABASES = {
-    #      'default': dj_database_url.config(default=env('DATABASE_URL'))
-    # }
+
     DATABASES = {
-        # 'default': dj_database_url.parse("postgresql://postgres:LjRcKvTudvIcAEhOtkuuFwqOJmlbvmHC@postgres.railway.internal:5432/railway")
         'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
 else:
     DATABASES = {
-    'default': dj_database_url.parse("postgresql://postgres:LjRcKvTudvIcAEhOtkuuFwqOJmlbvmHC@switchback.proxy.rlwy.net:45534/railway")
+        'default': dj_database_url.config(default=os.getenv('LOCAL_DATABASE_URL'))
     }
-    
-    #  DATABASES = {
-    #     'default': dj_database_url.config(default=os.getenv('DATABASE_URL')), ENGINE: 'django.db.backends.postgresql'
-    # }
-
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.sqlite3',
-    #         'NAME': BASE_DIR / 'db.sqlite3',
-    #     }
-    # }
 
 
 # Password validation
