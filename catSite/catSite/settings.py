@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-fy8t5!u^jr#2&9eekoet#4n+_p6u6b$qdry5tbc0omeicdnt6j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['britishmerlinblue.com', 'thefinalcat-production.up.railway.app', 'localhost','127.0.0.1', 'healthcheck.railway.app', 'catadoptionsite-production.up.railway.app']
+ALLOWED_HOSTS = ['www.britishmerlinblue.com', 'thefinalcat-production.up.railway.app', 'localhost','127.0.0.1', 'healthcheck.railway.app', 'catadoptionsite-production.up.railway.app']
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'https://britishmerlinblue.com',  "https://thefinalcat-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'https://www.britishmerlinblue.com',  "https://thefinalcat-production.up.railway.app"]
 CSRF_COOKIE_HTTPONLY = False  # ✅ Allows JavaScript to read CSRF cookies
 CSRF_COOKIE_SECURE = False    # ❌ Set to True only if using HTTPS
 CSRF_COOKIE_SAMESITE = 'Lax'  # ✅ Allows CSRF cookies to be sent correctly
