@@ -14,6 +14,9 @@ from pathlib import Path
 
 from socials.apps import SocialConfig
 
+
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -98,11 +101,21 @@ THUMBNAIL_PROCESSORS = (
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+deployed = True
+
+if deployed:
+    # DATABASES = {
+    #      'default': dj_database_url.config(default=env('DATABASE_URL'))
+    # }
+    DATABASES = {
+    'default': dj_database_url.parse("postgresql://postgres:LjRcKvTudvIcAEhOtkuuFwqOJmlbvmHC@postgres.railway.internal:5432/railway")
     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
 }
 
 
