@@ -108,14 +108,18 @@ if deployed:
     #      'default': dj_database_url.config(default=env('DATABASE_URL'))
     # }
     DATABASES = {
-    'default': dj_database_url.parse("postgresql://postgres:LjRcKvTudvIcAEhOtkuuFwqOJmlbvmHC@postgres.railway.internal:5432/railway")
+    # 'default': dj_database_url.parse("postgresql://postgres:LjRcKvTudvIcAEhOtkuuFwqOJmlbvmHC@postgres.railway.internal:5432/railway")
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
 else:
     DATABASES = {
     'default': dj_database_url.parse("postgresql://postgres:LjRcKvTudvIcAEhOtkuuFwqOJmlbvmHC@switchback.proxy.rlwy.net:45534/railway")
     }
     
-    
+    #  DATABASES = {
+    #      'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    # }
+
     # DATABASES = {
     #     'default': {
     #         'ENGINE': 'django.db.backends.sqlite3',
