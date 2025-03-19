@@ -10,12 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import dotenv
 from pathlib import Path
 
 from socials.apps import SocialConfig
 
 
 import dj_database_url
+
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -103,13 +106,17 @@ THUMBNAIL_PROCESSORS = (
 
 deployed = True
 
+
+database_url = os.getenv('DATABASE_URL')
+print(f"🚀 DATABASE_URL: {database_url}")  # Print the database URL
+
 if deployed:
     # DATABASES = {
     #      'default': dj_database_url.config(default=env('DATABASE_URL'))
     # }
     DATABASES = {
         # 'default': dj_database_url.parse("postgresql://postgres:LjRcKvTudvIcAEhOtkuuFwqOJmlbvmHC@postgres.railway.internal:5432/railway")
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL')), ENGINE: 'django.db.backends.postgresql'
+        'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
 else:
     DATABASES = {
