@@ -108,8 +108,8 @@ if deployed:
     #      'default': dj_database_url.config(default=env('DATABASE_URL'))
     # }
     DATABASES = {
-    # 'default': dj_database_url.parse("postgresql://postgres:LjRcKvTudvIcAEhOtkuuFwqOJmlbvmHC@postgres.railway.internal:5432/railway")
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+        # 'default': dj_database_url.parse("postgresql://postgres:LjRcKvTudvIcAEhOtkuuFwqOJmlbvmHC@postgres.railway.internal:5432/railway")
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL')), ENGINE: 'django.db.backends.postgresql'
     }
 else:
     DATABASES = {
@@ -117,7 +117,7 @@ else:
     }
     
     #  DATABASES = {
-    #      'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    #     'default': dj_database_url.config(default=os.getenv('DATABASE_URL')), ENGINE: 'django.db.backends.postgresql'
     # }
 
     # DATABASES = {
